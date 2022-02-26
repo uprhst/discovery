@@ -9,3 +9,15 @@ https://superuser.com/questions/1185070/transparent-tunnel-between-interfaces-on
 https://vincent.bernat.ch/en/blog/2017-vxlan-linux#other-considerations
 https://vincent.bernat.ch/en/blog/2012-multicast-vxlan
  -->
+
+ # Discovery
+ This is a service which should start up right after server bootup and network setup. It plays the role of a mesh service discovery, while not in the exact sense. It contacts remote API and gets a list of servers - routers as well as metadata for the server it is suited on.
+
+ ## Features
+ - UPs private interfaces and creates routes and addresses
+ - Looks up remote router servers and setups an overlay network link between them (via IPv6)
+ - (Should) Makes sures that servers inter-DC are connected at all times
+
+## To do
+- Configuration file parser, so we can avoid hardcoded settings
+- Webhooks
