@@ -1,0 +1,35 @@
+syntax = "proto3";
+package node_funcs;
+
+service NodeMaistrou {
+    rpc ListNodes (PageRequest) returns (ListReply);
+    rpc GetNode(_GetNode) returns (Node);
+}
+
+message PageRequest {
+    int32 perpage = 1;
+    int32 page = 2;
+    bool pending = 3;
+    int32 type = 4;
+}
+
+message ListReply {
+    string data = 1;
+    int64 pages = 2;
+}
+
+message _GetNode {
+    int64 id = 1;
+}
+
+message Node {
+    int64 id = 1;
+    string provider_id = 2;
+    string hostname = 3;
+    string region = 4;
+    string ipv4 = 5;
+    string ipv6network = 6;
+    int32 status = 7;
+    int64 created = 8;
+    int64 updated = 9;
+}

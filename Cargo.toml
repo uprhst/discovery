@@ -1,0 +1,35 @@
+[package]
+name = "dsc"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tonic-build = "0.6"
+serde = { version = "1.0", features = ["derive"] }
+
+[dependencies]
+tokio = { version = "1.15.0", features = ["full", "rt-multi-thread"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.78"
+serde_with = "1.12.0"
+chrono = { version = "0.4.19", features = ["serde"] }
+tonic = "0.6"
+prost = "0.9"
+minreq = { version = "2.5.1", features = ["json-using-serde", "https"] }
+ipnetwork = "0.18.0"
+ipaddress = "0.1.2"
+fastping-rs = "0.2"
+rand = "0.8.4"
+
+# RTNetLink for managing virtual interfaces
+rtnetlink = { version = "0.9.0", path = "/root/little-dude-netlink/rtnetlink" }
+futures = "0.3.21"
+
+hostname = { version = "^0.3", features = ["set"] }
+version-compare = "0.1.0"
+
+# Local organization
+libloading = "0.7.3"
+plugin-interface = { version = "*", path = "../plugin-interface/" }

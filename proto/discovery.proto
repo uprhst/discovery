@@ -1,0 +1,15 @@
+syntax = "proto3";
+package discovery;
+
+service Discovery {
+    rpc Announce (Net) returns (Empty);
+    rpc Ping (Empty) returns (Empty);
+}
+
+message Net {
+    string address = 1;
+    string location = 2;
+    int32 prefix = 3;
+}
+
+message Empty {}
