@@ -527,10 +527,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let mut routers = {
         // Connect to Maistroü        
-        // let mut client = NodeMaistrouClient::connect("http://108.61.178.194:50051").await
-        // .map_err(|err| format!("Failed connecting to Maistrou: {}", err))?;
         // This is will repeat the call at 5 seconds interval (5000ms)
-        let mut client = repeat_until_ok!(NodeMaistrouClient::connect("http://108.61.178.194:50051").await
+        let mut client = repeat_until_ok!(NodeMaistrouClient::connect(format!("http://{}:50051", std::env::var("MAISTROU_HOST").expect("MAISTROU_HOST ENV is unavailable"))).await
         .map_err(|err| format!("Failed connecting to Maistrou: {}", err)))?;
 
         eprintln!("Successfully connected to Maistrou");
