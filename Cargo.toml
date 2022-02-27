@@ -29,6 +29,7 @@ futures = "0.3.21"
 
 hostname = { version = "^0.3", features = ["set"] }
 version-compare = "0.1.0"
+libp2p = "0.43.0"
 
 # Local organization
 libloading = "0.7.3"
