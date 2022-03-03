@@ -22,3 +22,4 @@ https://vincent.bernat.ch/en/blog/2012-multicast-vxlan
 - Configuration file parser, so we can avoid hardcoded settings
 - Webhooks
 - Docs??
+- Expore libp2p library (mDNS)
